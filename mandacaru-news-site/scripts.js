@@ -469,19 +469,19 @@
       id: 'sabor',
       titulo: 'Sabor do Nordeste 🍳',
       descricao: 'As deliciosas confusões e paixões pela culinária sertaneja tradicional.',
-      paineis: ['carnedesol.jpeg']
+      paineis: ['./assets/tirinhas/carnedesol.jpeg']
     },
     {
       id: 'dicionario',
       titulo: 'Dicionário do Zé 📖',
       descricao: 'Traduzindo as expressões mais arretadas do nosso vocabulário de forma cômica.',
-      paineis: ['aregiao.jpeg', 'ritmodonordeste.jpeg']
+      paineis: ['./assets/tirinhas/aregiao.jpeg', './assets/tirinhas/ritmodonordeste.jpeg']
     },
     {
       id: 'peleja',
       titulo: 'Peleja de Alencar ⚔️',
       descricao: 'Os causos exagerados e assombrações que o povo conta no fim de tarde.',
-      paineis: ['brilho.jpeg', 'mitos.jpeg']
+      paineis: ['./assets/tirinhas/brilho.jpeg', './assets/tirinhas/mitos.jpeg']
     }
   ];
 
@@ -594,7 +594,7 @@ const noticias = [
     p6: "Com essa ampliação, a Refinaria Abreu e Lima aumentará significativamente a produção de derivados como diesel S-10, gasolina, gás liquefeito de petróleo (GLP) e nafta. A expectativa é que o crescimento da produção contribua para reduzir a necessidade de importação desses combustíveis, fortalecendo a segurança energética nacional e diminuindo custos logísticos.",
     p7: "Além dos impactos no abastecimento, a expansão da refinaria deve gerar empregos diretos e indiretos durante as obras e ampliar a demanda por empresas fornecedoras de equipamentos, engenharia, transporte e manutenção. O fortalecimento da atividade industrial em Suape também beneficia o comércio e diversos serviços da região, consolidando o complexo como um dos principais polos industriais do Nordeste.",
     p8: "Para a Petrobras, o desempenho da Refinaria Abreu e Lima demonstra os resultados dos investimentos realizados no parque de refino brasileiro. Com os projetos previstos para os próximos anos, a estatal espera ampliar a produção nacional de combustíveis, reduzir a dependência do mercado externo e consolidar Pernambuco como um dos principais centros de produção de derivados de petróleo do país.",
-    imagem: "../assets/n1.jpg",
+    imagem: "./assets/n1.jpg",
     tema: "politica"
   },
   {
@@ -607,7 +607,7 @@ const noticias = [
     p6: "A festa tomou conta das ruas de Salvador logo após o apito final. Milhares de torcedores comemoraram o título em diversos bairros da capital baiana, com carreatas, bandeiras e fogos de artifício. Nas redes sociais, a conquista esteve entre os assuntos mais comentados do país, demonstrando a enorme mobilização causada pela competição entre os estados nordestinos.",
     p7: "O sucesso da Copa do Nordeste também reforça a importância econômica e cultural do torneio. Além de movimentar milhões de reais em direitos de transmissão, patrocínios e turismo esportivo, a competição fortalece a rivalidade regional e oferece grande visibilidade aos clubes do Nordeste. A cada edição, o campeonato atrai mais público e amplia sua relevância no calendário nacional.",
     p8: "Para o Vitória, o pentacampeonato representa mais do que uma conquista esportiva. O título simboliza o retorno do clube ao protagonismo regional após anos de reconstrução e aumenta a confiança da equipe para a sequência da temporada. Já para o futebol nordestino, a decisão entre Vitória e Fortaleza mostrou, mais uma vez, a competitividade e a força dos clubes da região, que seguem conquistando espaço entre os principais times do país.",
-    imagem: "../assets/n4.jpg",
+    imagem: "./assets/n4.jpg",
     tema: "esporte"
   },
   {
@@ -620,7 +620,7 @@ const noticias = [
     p6: "O impacto econômico da festa vai além de Campina Grande. Municípios vizinhos também registram aumento na ocupação hoteleira, na procura por transporte e na comercialização de produtos típicos. Artesãos, agricultores familiares e pequenos empreendedores aproveitam o período para ampliar suas vendas, fortalecendo a economia regional e gerando milhares de empregos temporários durante as festividades juninas.",
     p7: "A gastronomia nordestina também ocupa papel de destaque na programação. Barracas espalhadas pelo Parque do Povo oferecem pratos tradicionais como canjica, pamonha, milho-verde, bolo de milho, pé de moleque, carne de sol, tapioca e diversas receitas típicas da culinária regional. O artesanato local também recebe grande visibilidade, permitindo que visitantes conheçam produtos produzidos por artistas da Paraíba e de outros estados nordestinos.",
     p8: "Considerado um dos maiores eventos populares da América Latina, o São João de Campina Grande reforça, a cada edição, a importância da cultura nordestina para a identidade brasileira. Ao unir tradição, música, gastronomia, turismo e desenvolvimento econômico, a festa consolida a cidade paraibana como uma das principais referências culturais do país e demonstra a força das manifestações populares do Nordeste.",
-    imagem: "../assets/n6.jpg",
+    imagem: "./assets/n6.jpg",
     tema: "cultura"
   },
   {
@@ -633,7 +633,7 @@ const noticias = [
     p6: "Segundo dados do Banco Central, o comprometimento da renda das famílias brasileiras com o pagamento de dívidas atingiu um dos maiores níveis da série histórica, tornando a renegociação uma prioridade para milhões de pessoas. A expectativa do governo é reduzir a inadimplência, estimular o consumo e fortalecer a recuperação econômica do país.",
     p7: "O programa também deverá ter impacto significativo na Região Nordeste, que concentra milhões de trabalhadores aptos a participar da iniciativa. Estados como Bahia, Pernambuco, Ceará e Maranhão possuem elevado número de famílias com renda dentro dos critérios do programa e podem ser amplamente beneficiados pela possibilidade de renegociação das dívidas utilizando recursos do FGTS. A expectativa é que a medida contribua para fortalecer o comércio, ampliar o acesso ao crédito e melhorar a situação financeira de milhares de famílias nordestinas.",
     p8: "O governo afirma que o Novo Desenrola faz parte de um conjunto de políticas voltadas à recuperação da economia e à redução do endividamento da população. No Nordeste, onde grande parte da atividade econômica depende do consumo das famílias e dos pequenos negócios, a expectativa é que o programa impulsione a circulação de recursos, facilite a retomada do crédito e contribua para o desenvolvimento econômico da região.",
-    imagem: "../assets/n2.jpg",
+    imagem: "./assets/n2.jpg",
     tema: "politica"
   },
   {
@@ -646,7 +646,7 @@ const noticias = [
     p6: "A escalação brasileira no jogo trouxe duas novidades em relação à estreia: Matheus Cunha no lugar de Igor Thiago e Danilo na lateral direita substituindo Éder Militão, que se lesionou antes do torneio. O Brasil alinhou com Alisson; Danilo, Gabriel Magalhães, Marquinhos e Douglas Santos; Casemiro, Bruno Guimarães e Lucas Paquetá; Raphinha, Vinícius Júnior e Matheus Cunha. Raphinha saiu ainda no primeiro tempo com dores e foi substituído pelo jovem Rayan.",
     p7: "Com 68.324 torcedores presentes, grande parte vestida de verde e amarelo — reflexo da enorme comunidade brasileira na região da Filadélfia —, o clima nas arquibancadas foi de festa. O árbitro espanhol Alejandro Hernandez comandou a partida sem grandes polêmicas. Os cartões amarelos da partida foram para Arcus, Pierrot e Jean Jacques, pelo Haiti, e Douglas Santos, pelo Brasil.",
     p8: "Na próxima quarta-feira, 24 de junho, o Brasil enfrenta a Escócia no estádio de Miami, às 19h no horário de Brasília, com transmissão pela Globo, Sportv e CazéTV. Uma vitória ou empate garante a classificação antecipada às oitavas de final. O adversário nas oitavas, caso o Brasil avance como líder, seria o segundo colocado do Grupo D, ainda indefinido.",
-    imagem: "../assets/n3.jpg",
+    imagem: "./assets/n3.jpg",
     tema: "esporte"
   },
   {
@@ -659,7 +659,7 @@ const noticias = [
     p6: "O contexto político da visita também chamou atenção. A presença de Chico em Havana foi interpretada por analistas como uma declaração política implícita, reforçando os laços de solidariedade entre artistas engajados dos dois países.",
     p7: "A produção do documentário assume, segundo a Cinema Inflamável, um caráter que vai além do biográfico. O objetivo é capturar a dimensão política e humana do encontro entre dois ícones da canção popular latino-americana que nunca abandonaram seus compromissos com a liberdade artística e a resistência cultural.",
     p8: "O documentário ainda não tem data de estreia confirmada, mas já atrai atenção de festivais nacionais e internacionais. Para o público brasileiro, o anúncio chegou num momento especial: o aniversário do artista, celebrado com a confirmação de que Chico, aos 82 anos, segue criando, viajando e se posicionando — como sempre fez.",
-    imagem: "../assets/n5.jpg",
+    imagem: "./assets/n5.jpg",
     tema: "cultura"
   },
   {
@@ -672,7 +672,7 @@ const noticias = [
     p6: "O avanço do turismo de base comunitária é apontado pelas publicações estrangeiras como um dos diferenciais da nova imagem do Brasil. Projetos em territórios indígenas e quilombolas aproximam viajantes exigentes de uma vivência que vai além das atrações convencionais.",
     p7: "O Ministério do Turismo informou que o reconhecimento será utilizado como âncora de uma campanha de divulgação internacional prevista para o segundo semestre de 2026, com foco em mercados como Estados Unidos, Alemanha e Japão. A meta é receber 9,5 milhões de turistas estrangeiros ao longo do ano.",
     p8: "O setor privado também se movimenta, com redes hoteleiras anunciando novos empreendimentos em destinos como Trancoso, Caraíva, Serra Gaúcha e Chapada Diamantina, com foco em hospedagens integradas à natureza. O aquecimento do setor é resultado direto do aumento da visibilidade internacional.",
-    imagem: "../assets/n7.jpg",
+    imagem: "./assets/n7.jpg",
     tema: "turismo"
   },
   {
@@ -685,7 +685,7 @@ const noticias = [
     p6: "Além das lagoas, a região oferece passeios de lancha pelo Rio Preguiças com paradas em bancos de areia e no Farol Mandacaru. A gastronomia local valoriza o peixe fresco, o caranguejo e as preparações com cuxá, molho típico maranhense feito com vinagreira, camarão seco e farinha.",
     p7: "Quem planeja a viagem para agosto encontra condições igualmente favoráveis: as lagoas ainda estão cheias e o vento forte marca o início da temporada de kitesurf em Atins e Caburé, atraindo esportistas de todo o Brasil e do exterior.",
     p8: "A recomendação unânime dos especialistas é reservar a hospedagem com pelo menos 30 a 45 dias de antecedência para viagens em julho e agosto. As pousadas de Atins são as que esgotam mais rapidamente, pela oferta limitada e pela demanda crescente de turistas que buscam uma experiência mais rústica.",
-    imagem: "../assets/n8.jpg",
+    imagem: "./assets/n8.jpg",
     tema: "turismo"
   }
 ];
