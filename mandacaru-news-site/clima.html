@@ -3,40 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clima Nordeste — Mandacarú News</title>
+  <title>Clima Nordeste — Jornal Mandacarú</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Sarabun:ital,wght@1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="pg-clima">
 
   <header class="header">
-    <div class="header__logo">🌵 Mandacarú News</div>
+    <div class="header__logo">🌵 Jornal Mandacarú</div>
     <nav class="header__nav">
       <a href="home.html">Notícias</a>
       <a href="clima.html" class="active">Clima</a>
       <a href="culinaria.html">Cultura</a>
       <a href="tirinhas.html">Tirinhas</a>
     </nav>
+    <input class="header__search" type="text" placeholder="Pesquisar...">
   </header>
 
-  <div id="clima-tabs" class="clima-tabs"></div>
+  <main class="clima-container">
+    <header class="clima-header">
+      <h1>Previsão do Tempo — <span class="color-green">Nordeste</span></h1>
+      <p>Dados em tempo real diretamente das capitais nordestinas.</p>
+    </header>
 
-  <div class="clima-card">
-    <div>
-      <h2 id="clima-cidade">Carregando...</h2>
-      <div id="clima-temp" class="clima-card__temp">--°C</div>
+    <div id="clima-tabs" class="clima-tabs"></div>
+
+    <div class="clima-main-card">
+      <div class="clima-main-info">
+        <div>
+          <h2 id="clima-cidade">Carregando...</h2>
+          <p id="clima-condicao" class="clima-condicao">Buscando dados...</p>
+        </div>
+        <div id="clima-temp" class="clima-temp">--°C</div>
+      </div>
+      
+      <div class="clima-metrics">
+        <div class="metric-box">
+          <span class="metric-label">Umidade do Ar</span>
+          <span id="clima-umidade" class="metric-value">--%</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-label">Velocidade do Vento</span>
+          <span id="clima-vento" class="metric-value">-- km/h</span>
+        </div>
+      </div>
     </div>
-    <div class="clima-card__info">
-      <p>Umidade: <span id="clima-umidade">--</span>%</p>
-      <p>Vento: <span id="clima-vento">--</span> km/h</p>
-    </div>
-  </div>
 
-  <h3 class="clima-subtitulo">Próximos 7 dias</h3>
-  <div id="clima-forecast" class="clima-forecast"></div>
-
-  <footer class="footer">
-    <p>© 2026 Mandacarú News - Projeto acadêmico.</p>
-  </footer>
+    <section class="clima-forecast-section">
+      <h3>Previsão para os próximos 7 dias</h3>
+      <div id="clima-forecast" class="clima-forecast-grid"></div>
+    </section>
+  </main>
 
   <script src="scripts.js"></script>
 </body>

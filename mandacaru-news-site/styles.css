@@ -619,3 +619,190 @@ body.pg-auth {
     object-fit: cover;
   }
 }
+
+/* ============================================================
+   PÁGINA DE CLIMA (WEATHER DASHBOARD)
+   ============================================================ */
+body.pg-clima {
+  background: #060d08; /* Fundo escuro */
+  color: #fff;
+  min-height: 100vh;
+}
+
+.clima-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.clima-header {
+  margin-bottom: 30px;
+}
+
+.clima-header h1 {
+  font-family: 'Sarabun', sans-serif;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.clima-header p {
+  color: #a0aab0;
+  font-size: 16px;
+}
+
+/* Área de Rolagem das Abas das Capitais */
+.clima-tabs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  margin-bottom: 25px;
+  scrollbar-width: thin;
+}
+
+.clima-tabs::-webkit-scrollbar {
+  height: 6px;
+}
+
+.clima-tabs::-webkit-scrollbar-thumb {
+  background: #2eb85c;
+  border-radius: 4px;
+}
+
+.clima-tab-btn {
+  background: #142419;
+  color: #c5dec7;
+  border: 1px solid #1f3827;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.clima-tab-btn:hover {
+  background: #1d3625;
+}
+
+.clima-tab-btn.active {
+  background: #2eb85c;
+  color: #000;
+  border-color: #2eb85c;
+}
+
+/* Card Principal */
+.clima-main-card {
+  background: linear-gradient(135deg, #112216 0%, #08140d 100%);
+  border: 1px solid #1f3c27;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  margin-bottom: 40px;
+}
+
+.clima-main-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1f3c27;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+#clima-cidade {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.clima-condicao {
+  font-size: 16px;
+  color: #79cc8c;
+}
+
+.clima-temp {
+  font-size: 64px;
+  font-weight: 700;
+  font-family: 'Sarabun', sans-serif;
+  color: #2eb85c;
+}
+
+/* Métricas Extra (Vento / Umidade) */
+.clima-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.metric-box {
+  background: #0a170e;
+  border: 1px solid #162b1c;
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.metric-label {
+  font-size: 12px;
+  color: #8fa394;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-value {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Grade de Previsão Semanal */
+.clima-forecast-section h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #c5dec7;
+}
+
+.clima-forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 15px;
+}
+
+.clima-forecast-card {
+  background: #0e1c12;
+  border: 1px solid #1a3321;
+  padding: 20px 15px;
+  border-radius: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.forecast-day {
+  font-size: 14px;
+  font-weight: 600;
+  color: #a0aab0;
+}
+
+.forecast-icon {
+  font-size: 28px;
+  margin: 5px 0;
+}
+
+.forecast-temps {
+  font-size: 14px;
+}
+
+.forecast-max {
+  color: #ff6b6b;
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.forecast-min {
+  color: #4dadf7;
+}
