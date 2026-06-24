@@ -208,66 +208,135 @@ body.pg-clima {
 }
 
 /* ============================================================
-   CULTURA (culinária / dança / costumes / gírias)
+   PÁGINA DE CULTURA (DARK THEME)
    ============================================================ */
-
 body.pg-cultura {
-  background: var(--bg);
-  color: var(--texto);
+  background: #060d08; /* Mesmo fundo escuro do Clima e Tirinhas */
+  color: #fff;
+  min-height: 100vh;
 }
 
-.cultura-main {
+.cultura-layout {
   max-width: 1200px;
-  margin: auto;
-  padding: 30px;
+  margin: 0 auto;
+  padding: 50px 20px;
 }
 
-.cultura-main h1 {
-  margin-bottom: 20px;
+.cultura-hero {
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-/* Sub-categorias */
-.cultura-subcats {
+.cultura-hero h1 {
+  font-family: 'Sarabun', sans-serif;
+  font-size: 38px;
+  color: #2eb85c;
+  margin-bottom: 15px;
+}
+
+.cultura-hero p {
+  color: #a0aab0;
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Abas de Navegação (Pills) */
+.cultura-tabs {
   display: flex;
-  gap: 25px;
-  color: var(--laranja);
-  font-weight: bold;
-  margin-bottom: 30px;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
   flex-wrap: wrap;
 }
 
-.cultura-subcats__item {
+.cultura-tab-btn {
+  background: #0a170e;
+  border: 1px solid #162b1c;
+  color: #c5dec7;
+  padding: 12px 28px;
+  border-radius: 30px;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
 }
 
-.cultura-subcats__item.ativo {
-  text-decoration: underline;
+.cultura-tab-btn:hover {
+  background: #142419;
+  border-color: #2eb85c;
+  color: #fff;
 }
 
-/* Grade de cards */
-.cultura-cards {
+.cultura-tab-btn.active {
+  background: #2eb85c;
+  color: #000;
+  border-color: #2eb85c;
+  box-shadow: 0 4px 15px rgba(46, 184, 92, 0.4);
+}
+
+/* Área de Conteúdo */
+.cultura-content h2 {
+  font-family: 'Sarabun', sans-serif;
+  font-size: 26px;
+  color: #fff;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #1f3c27;
+  padding-bottom: 15px;
+}
+
+.cultura-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin: 20px 0 40px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
 }
 
+/* Estilo dos Cards de Cultura */
 .cultura-card {
-  background: var(--branco);
-  border-radius: 12px;
-  padding: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  background: #0a170e;
+  border: 1px solid #162b1c;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.cultura-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  border-color: #1f3c27;
 }
 
 .cultura-card__img {
   width: 100%;
-  height: 150px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 10px;
+  border-bottom: 1px solid #162b1c;
+}
+
+/* Ajuste para quando o card não tiver imagem (Gírias) */
+.cultura-card.no-img .cultura-card__body {
+  padding-top: 30px;
+}
+
+.cultura-card__body {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .cultura-card h3 {
-  margin: 10px 0;
+  color: #2eb85c;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.cultura-card p {
+  color: #a0aab0;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 /* ============================================================
