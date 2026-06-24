@@ -146,71 +146,257 @@
 }
 
 /* ============================================================
-   HOME
+   ESTILIZAÇÃO DARK NEON — HOME & NOTÍCIAS
    ============================================================ */
 
+/* Ajustes Globais para o Header nas páginas Dark */
+.pg-home .header, .pg-detalhe .header {
+  background: #020703 !important;
+  border-bottom: 2px solid #162b1c;
+  padding: 15px 40px;
+}
+
+.pg-home .header__logo, .pg-detalhe .header__logo {
+  color: #2eb85c !important;
+  text-shadow: 0 0 10px rgba(46, 184, 92, 0.6);
+}
+
+.pg-home .header__nav a, .pg-detalhe .header__nav a {
+  color: #c5dec7 !important;
+  transition: all 0.2s ease;
+}
+
+.pg-home .header__nav a:hover, .pg-detalhe .header__nav a:hover {
+  color: #fff !important;
+}
+
+.pg-home .header__nav a.active, .pg-detalhe .header__nav a.active {
+  background: #2eb85c !important;
+  color: #000 !important;
+  box-shadow: 0 0 12px rgba(46, 184, 92, 0.5);
+  font-weight: bold;
+}
+
+.pg-home .header__search, .pg-detalhe .header__search {
+  background: #142419 !important;
+  border: 1px solid #1f3827 !important;
+  color: #fff !important;
+  border-radius: 20px;
+  padding: 8px 16px;
+}
+
+.pg-home .header__search::placeholder, .pg-detalhe .header__search::placeholder {
+  color: #556b57 !important;
+}
+
+/* ------------------ HOME (pg-home) ------------------ */
 body.pg-home {
-  background: #f4f4f4;
+  background-color: #040a05;
+  color: #c5dec7;
 }
 
-/* Hero */
 .home-hero {
-  height: 420px;
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-    url('https://picsum.photos/1400/600') center/cover no-repeat;
-  color: var(--branco);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 60px;
-}
-
-.home-hero__titulo {
-  font-size: 42px;
-}
-
-/* Barra de categorias */
-.home-cats {
-  background: var(--verde-esc);
-  padding: 15px;
+  background: linear-gradient(135deg, #0a170e 0%, #040a05 100%);
+  border-bottom: 1px solid #162b1c;
+  padding: 60px 20px;
   text-align: center;
 }
 
-.home-cats__btn {
-  margin: 5px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
+.home-hero__titulo {
+  color: #2eb85c;
+  text-shadow: 0 0 15px rgba(46, 184, 92, 0.7);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
 
-/* Conteúdo principal */
-.home-main {
-  max-width: 1200px;
-  margin: auto;
-  padding: 30px;
+.home-hero p {
+  color: #8fa394;
+  font-size: 1.1rem;
 }
 
-/* Cards de notícias */
-.home-card {
+/* Categorias */
+.home-cats {
   display: flex;
-  gap: 20px;
-  background: var(--branco);
-  margin: 20px 0;
-  padding: 15px;
-  border-radius: 12px;
+  justify-content: center;
+  gap: 12px;
+  padding: 25px 20px;
+  background: #040a05;
+}
+
+.home-cats__btn {
+  background: #142419;
+  color: #c5dec7;
+  border: 1px solid #1f3827;
+  padding: 10px 22px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.home-cats__btn:hover {
+  background: #1d3625;
+  color: #fff;
+  border-color: #2eb85c;
+}
+
+.home-cats__btn.ativo {
+  background: #2eb85c;
+  color: #000;
+  border-color: #2eb85c;
+  box-shadow: 0 0 12px rgba(46, 184, 92, 0.4);
+}
+
+/* Seção Principal de Notícias */
+.home-main h2 {
+  color: #2eb85c;
+  font-size: 22px;
+  margin: 30px 40px 15px 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Cards de Notícias (Caso renderizados via HTML ou JS) */
+.home-card {
+  background: #0a170e;
+  border: 1px solid #162b1c;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 15px 40px 25px 40px;
+  display: flex;
+  gap: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.home-card:hover {
+  transform: translateY(-3px);
+  border-color: #2eb85c;
+  box-shadow: 0 6px 22px rgba(46, 184, 92, 0.2);
 }
 
 .home-card__img {
-  width: 300px;
   border-radius: 10px;
+  max-width: 240px;
+  object-fit: cover;
+  border: 1px solid #162b1c;
 }
 
-.home-vermais {
-  display: block;
-  margin: 30px auto;
-  padding: 12px 30px;
+.home-card h3 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.home-card p {
+  color: #8fa394;
+  line-height: 1.5;
+}
+
+
+/* ------------------ NOTÍCIAS (pg-detalhe) ------------------ */
+body.pg-detalhe {
+  background-color: #040a05;
+  color: #c5dec7;
+}
+
+.detalhe-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.detalhe-caixa {
+  background: #0a170e;
+  border: 1px solid #162b1c;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.Ntitulo {
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.Nfoto {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid #162b1c;
+  margin-bottom: 35px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.detalhe-colunas {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: #c5dec7;
+}
+
+.detalhe-colunas p {
+  margin-bottom: 22px;
+}
+
+/* Rodapé e Botões de Ação */
+.detalhe-rodape {
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid #162b1c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-salvar, .btn-curtir {
+  background: #142419;
+  color: #c5dec7;
+  border: 1px solid #1f3827;
+  padding: 12px 20px;
+  border-radius: 12px;
   cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-salvar:hover, .btn-curtir:hover {
+  background: #1d3625;
+  color: #fff;
+  border-color: #2eb85c;
+  box-shadow: 0 0 10px rgba(46, 184, 92, 0.3);
+}
+
+
+/* ------------------ FOOTER GLOBAL NEON ------------------ */
+.footer {
+  background: #020703 !important;
+  border-top: 2px solid #162b1c !important;
+  color: #8fa394 !important;
+  padding: 40px;
+  margin-top: 60px;
+}
+
+.footer__logo p {
+  color: #2eb85c;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(46, 184, 92, 0.4);
+}
+
+.footer__grupo h4 {
+  color: #2eb85c;
+  margin-bottom: 12px;
+}
+
+.footer__grupo ul li {
+  color: #c5dec7;
 }
 
 /* ============================================================
@@ -1497,4 +1683,49 @@ body.pg-tirinhas {
   color: #000;
   border-color: #2eb85c;
   box-shadow: 0 4px 12px rgba(46, 184, 92, 0.3);
+}
+
+/* Cotação */
+
+/* Widget que aparece no header */
+#cotacao-dolar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 13px;
+  color: var(--branco);
+  white-space: nowrap;
+}
+
+/* Bandeira + par de moedas */
+.cotacao-par {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* Valor do dólar (ex: R$ 5,15) */
+#cotacao-valor {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Variação quando está subindo — verde claro */
+.cotacao-alta {
+  color: #69f0ae;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Variação quando está caindo — vermelho claro */
+.cotacao-baixa {
+  color: #ff6b6b;
+  font-size: 12px;
+  font-weight: bold;
 }

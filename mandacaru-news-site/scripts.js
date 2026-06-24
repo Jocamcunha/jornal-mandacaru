@@ -780,3 +780,45 @@ const noticias = [
   document.querySelector('.paragrafo8').textContent = noticia.p8;
   document.querySelector('.Nfoto').src              = noticia.imagem;
 })();
+
+/* Cotação de Dollar */
+(function initCotacao() {
+
+  // Só roda se o widget existir na página
+  const widget = document.getElementById('cotacao-dolar');
+  if (!widget) return;
+
+  const elValor    = document.getElementById('cotacao-valor');
+  const elVariacao = document.getElementById('cotacao-variacao');
+
+  async function buscarCotacao() {
+    try {
+      // AwesomeAPI — retorna cotação atual do dólar comercial em reais
+      const response = await fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL');
+      if (!response.ok) throw new Error('Falha na API');
+
+      const dados = await response.json();
+      const dolar = dados.USDBRL;
+
+      const valor    = parseFloat(dolar.bid).toFixed(2);   // preço de compra
+      const variacao = parseFloat(dolar.pctChange);         // variação % do dia
+
+      // Preenche o valor
+      elValor.textContent = `R$ ${valor.replace('.', ',')}`;
+
+      // Preenche a variação com seta e cor
+      const seta = variacao >= 0 ? '▲' : '▼';
+      elVariacao.textContent = `${seta} ${Math.abs(variacao).toFixed(2).replace('.', ',')}%`;
+      elVariacao.className   = variacao >= 0 ? 'cotacao-alta' : 'cotacao-baixa';
+
+    } catch (erro) {
+      console.error('Erro ao buscar cotação:', erro);
+      elValor.textContent    = 'R$ --';
+      elVariacao.textContent = '';
+    }
+  }
+
+  buscarCotacao(); // busca ao carregar
+  setInterval(buscarCotacao, 5 * 60000); // atualiza a cada 5 minutos
+
+})();
