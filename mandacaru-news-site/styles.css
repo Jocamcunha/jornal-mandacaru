@@ -1,0 +1,455 @@
+/* ============================================================
+   styles.css — Mandacarú News · CSS unificado
+   ============================================================ */
+
+/* ---------- Reset ---------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------- Variáveis ---------- */
+:root {
+  --verde:     #005c3c;
+  --verde-esc: #025133;
+  --laranja:   #c56b1f;
+  --bg:        #f3f3f3;
+  --branco:    #fff;
+  --texto:     #222;
+}
+
+/* ============================================================
+   COMPONENTES GLOBAIS
+   ============================================================ */
+
+/* ---------- Header ---------- */
+.header {
+  background: var(--verde-esc);
+  color: var(--branco);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.header__nav a {
+  color: var(--branco);
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.header__nav a.active {
+  background: var(--branco);
+  color: var(--verde-esc);
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+
+.header__search {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: var(--verde-esc);
+  color: var(--branco);
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+}
+
+/* ============================================================
+   HOME
+   ============================================================ */
+
+body.pg-home {
+  background: #f4f4f4;
+}
+
+/* Hero */
+.home-hero {
+  height: 420px;
+  background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+              url('https://picsum.photos/1400/600') center/cover no-repeat;
+  color: var(--branco);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+}
+
+.home-hero__titulo {
+  font-size: 42px;
+}
+
+/* Barra de categorias */
+.home-cats {
+  background: var(--verde-esc);
+  padding: 15px;
+  text-align: center;
+}
+
+.home-cats__btn {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Conteúdo principal */
+.home-main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+}
+
+/* Cards de notícias */
+.home-card {
+  display: flex;
+  gap: 20px;
+  background: var(--branco);
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.home-card__img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.home-vermais {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 30px;
+  cursor: pointer;
+}
+
+/* ============================================================
+   CLIMA
+   ============================================================ */
+
+body.pg-clima {
+  background: var(--bg);
+}
+
+/* Abas das capitais */
+.clima-tabs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 15px;
+}
+
+.clima-tab {
+  background: var(--verde);
+  color: var(--branco);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.clima-tab:hover {
+  background: var(--verde-esc);
+}
+
+/* Card principal do clima */
+.clima-card {
+  margin: 20px;
+  background: #003b24;
+  color: var(--branco);
+  padding: 25px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clima-card__temp {
+  font-size: 64px;
+  font-weight: bold;
+}
+
+.clima-card__info p {
+  margin: 4px 0;
+}
+
+/* Previsão dos 7 dias */
+.clima-subtitulo {
+  padding-left: 20px;
+}
+
+.clima-forecast {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.clima-forecast__dia {
+  background: var(--verde);
+  color: var(--branco);
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* ============================================================
+   CULTURA (culinária / dança / costumes / gírias)
+   ============================================================ */
+
+body.pg-cultura {
+  background: var(--bg);
+  color: var(--texto);
+}
+
+.cultura-main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+}
+
+.cultura-main h1 {
+  margin-bottom: 20px;
+}
+
+/* Sub-categorias */
+.cultura-subcats {
+  display: flex;
+  gap: 25px;
+  color: var(--laranja);
+  font-weight: bold;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.cultura-subcats__item {
+  cursor: pointer;
+}
+
+.cultura-subcats__item.ativo {
+  text-decoration: underline;
+}
+
+/* Grade de cards */
+.cultura-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 20px 0 40px;
+}
+
+.cultura-card {
+  background: var(--branco);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+.cultura-card__img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cultura-card h3 {
+  margin: 10px 0;
+}
+
+/* ============================================================
+   PERFIL
+   ============================================================ */
+
+body.pg-perfil {
+  background: var(--bg);
+}
+
+.perfil-container {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Sidebar do perfil */
+.perfil-sidebar {
+  background: var(--branco);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.perfil-sidebar__user {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.perfil-sidebar__user img {
+  border-radius: 50%;
+}
+
+.perfil-sidebar__nav {
+  list-style: none;
+}
+
+.perfil-sidebar__nav li {
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.perfil-sidebar__nav li.active {
+  background: #e8ece8;
+  font-weight: bold;
+}
+
+/* Conteúdo do perfil */
+.perfil-content {
+  background: var(--branco);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.perfil-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.perfil-header img {
+  border-radius: 50%;
+}
+
+/* Formulário */
+.perfil-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.perfil-form .full {
+  grid-column: 1 / -1;
+}
+
+.perfil-form label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.perfil-form input,
+.perfil-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.perfil-save-btn {
+  margin-top: 25px;
+  background: var(--verde);
+  color: var(--branco);
+  border: none;
+  padding: 14px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.perfil-save-btn:hover {
+  background: var(--verde-esc);
+}
+
+/* ============================================================
+   TIRINHAS
+   ============================================================ */
+
+body.pg-tirinhas {
+  background: #f2f2f2;
+}
+
+.tirinhas-layout {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 25px;
+}
+
+/* Área dos quadrinhos */
+.tirinhas-area {
+  background: #e8e8e8;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.tirinhas-area h1 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.tirinhas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.tirinhas-panel {
+  height: 180px;
+  background: var(--branco);
+  border: 1px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sidebar de séries */
+.tirinhas-sidebar {
+  background: var(--branco);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.tirinhas-sidebar h3 {
+  margin-bottom: 15px;
+}
+
+.tirinhas-sidebar__btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #f3f3f3;
+  cursor: pointer;
+}
+
+.tirinhas-sidebar__btn:hover {
+  background: #e0e0e0;
+}
+
+.tirinhas-sidebar__btn.selected {
+  background: var(--verde);
+  color: var(--branco);
+}
+
+.tirinhas-sidebar__btn.more {
+  margin-top: 20px;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clima Nordeste — Mandacarú News</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="pg-clima">
+
+  <header class="header">
+    <div class="header__logo">🌵 Mandacarú News</div>
+    <nav class="header__nav">
+      <a href="home.html">Notícias</a>
+      <a href="clima.html" class="active">Clima</a>
+      <a href="culinaria.html">Cultura</a>
+      <a href="tirinhas.html">Tirinhas</a>
+    </nav>
+  </header>
+
+  <div id="clima-tabs" class="clima-tabs"></div>
+
+  <div class="clima-card">
+    <div>
+      <h2 id="clima-cidade">Carregando...</h2>
+      <div id="clima-temp" class="clima-card__temp">--°C</div>
+    </div>
+    <div class="clima-card__info">
+      <p>Umidade: <span id="clima-umidade">--</span>%</p>
+      <p>Vento: <span id="clima-vento">--</span> km/h</p>
+    </div>
+  </div>
+
+  <h3 class="clima-subtitulo">Próximos 7 dias</h3>
+  <div id="clima-forecast" class="clima-forecast"></div>
+
+  <footer class="footer">
+    <p>© 2026 Mandacarú News - Projeto acadêmico.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
