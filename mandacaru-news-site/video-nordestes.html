@@ -6,7 +6,7 @@
   <title>Os Vários Nordestes - Mandacarú News</title>
   <link rel="stylesheet" href="styles.css"/>
   <style>
-    /* Estilização dedicada para o player de vídeo integrado ao Dark Neon */
+    /* Mantém o container neon idêntico ao anterior */
     .video-wrapper {
       position: relative;
       background: #020703;
@@ -16,15 +16,20 @@
       box-shadow: 0 0 20px rgba(46, 184, 92, 0.15);
       margin: 25px 0;
       width: 100%;
+      /* Truque para deixar o player do YouTube responsivo (proporção 16:9) */
+      padding-top: 56.25%; 
     }
 
-    video {
+    /* Força o iframe do YouTube a ocupar o espaço certinho do container */
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      display: block;
-      outline: none;
+      height: 100%;
+      border: none;
     }
 
-    /* Ajuste para o subtítulo/linha de apoio */
     .video-subtitulo {
       color: #8fa394;
       font-size: 1.1rem;
@@ -65,13 +70,17 @@
       <p class="video-subtitulo">Conheça o relato de um aluno nordestino da ETEC de Taboão da Serra que migrou para São Paulo e compartilha a pluralidade da sua terra.</p>
 
       <div class="video-wrapper">
-        <video controls poster="./assets/capa.png">
-          <source src="./assets/entrevista.mp4" type="video/mp4">
-          O teu navegador não suporta a reprodução de vídeos locais.
-        </video>
+        <iframe 
+          src="https://youtu.be/bEAQaux5yy8" 
+          title="Os Vários Nordestes" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
       </div>
 
       <div class="detalhe-texto">
+        <p>Link do vídeo:<a href="https://youtu.be/bEAQaux5yy8">Clique Aqui</a></p>
+        <br>
         <p>Nesta entrevista exclusiva conduzida para o Jornal Mandacarú, conversamos com um estudante da ETEC de Taboão da Serra que vivenciou de perto o processo migratório. Natural da região Nordeste, ele reconta os desafios da adaptação na metrópole paulista, a saudade de casa e o combate diário aos estereótipos.</p>
         
         <p>O título "Os Vários Nordestes" reflete perfeitamente o objetivo do projeto: desmistificar a ideia de que o Nordeste é uma região homogênea e única. Através do relato, descobrimos as nuances culturais, culinárias e linguísticas que separam e enriquecem cada um dos nove estados.</p>
