@@ -114,5 +114,52 @@
   });
 })();
 
+/* ============================================================
+   AUTH (Login / Cadastro)
+   ============================================================ */
+(function initAuth() {
+  const formLogin = document.getElementById('form-login');
+  const formCadastro = document.getElementById('form-cadastro');
+
+  // Lógica de Login
+  if (formLogin) {
+    formLogin.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = formLogin.querySelector('#submit-btn');
+      btn.textContent = 'Entrando...';
+      btn.disabled = true;
+
+      // Simula uma espera de carregamento e redireciona para a Home
+      setTimeout(() => {
+        window.location.href = 'home.html';
+      }, 800);
+    });
+  }
+
+  // Lógica de Cadastro
+  if (formCadastro) {
+    formCadastro.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const errorMsg = document.getElementById('error-msg');
+      const senha = document.getElementById('senha-input').value;
+      const btn = formCadastro.querySelector('#submit-btn');
+
+      if (senha.length < 6) {
+        errorMsg.textContent = 'A senha deve ter pelo menos 6 caracteres.';
+        errorMsg.style.display = 'block';
+        return;
+      }
+
+      errorMsg.style.display = 'none';
+      btn.textContent = 'Criando conta...';
+      btn.disabled = true;
+
+      // Simula o cadastro e redireciona para a Home
+      setTimeout(() => {
+        window.location.href = 'home.html';
+      }, 800);
+    });
+  }
+})();
 
 /*Notícias */

@@ -6,333 +6,43 @@
   <title>Login — Jornal Mandacarú</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sarabun:wght@400&family=Sora:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      min-height: 100vh;
-      background: #000;
-      font-family: 'Inter', Helvetica, sans-serif;
-    }
-
-    .page {
-      position: relative;
-      display: grid;
-      min-height: 100vh;
-      width: 100%;
-      max-width: 1440px;
-      margin: 0 auto;
-      overflow: hidden;
-      background: #000;
-      grid-template-columns: 1fr;
-    }
-
-    @media (min-width: 1024px) {
-      .page { grid-template-columns: 1fr 674px; }
-    }
-
-    /* Left panel */
-    .left {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      overflow: hidden;
-      padding: 33px 29px 48px;
-      color: #fff;
-    }
-
-    @media (min-width: 1024px) {
-      .left {
-        border-radius: 0 32px 32px 0;
-        padding: 33px 44px 48px 53px;
-      }
-    }
-
-    .gradient-overlay {
-      pointer-events: none;
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 72% 55%, rgba(8,122,45,0.78), rgba(8,122,45,0.18) 20%, rgba(0,0,0,0) 38%),
-        linear-gradient(203deg, rgba(169,169,169,0) 55%, rgba(169,169,169,0.2) 100%);
-    }
-
-    .bg-blur {
-      pointer-events: none;
-      position: absolute;
-      inset-block: 0;
-      left: 0;
-      height: 100%;
-      width: 828px;
-      max-width: none;
-      filter: blur(32.5px);
-      object-fit: cover;
-      opacity: 0.7;
-    }
-
-    header { position: relative; z-index: 10; }
-
-    .signup-text {
-      text-align: center;
-      font-size: 16px;
-      font-weight: 400;
-      color: #fff;
-    }
-
-    @media (min-width: 640px) { .signup-text { text-align: left; } }
-
-    .signup-text a {
-      color: #86bf89;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: inherit;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .signup-text a:hover { opacity: 0.9; }
-
-    .hero-img {
-      margin-top: 38px;
-      height: auto;
-      width: 463px;
-      max-width: 100%;
-    }
-
-    .tagline {
-      position: relative;
-      z-index: 10;
-      margin-top: 12px;
-      max-width: 611px;
-      font-family: 'Sarabun', Helvetica, sans-serif;
-      font-size: 25px;
-      font-weight: 400;
-      line-height: 50px;
-      color: #fff;
-    }
-
-    /* Form section */
-    .form-section {
-      position: relative;
-      z-index: 10;
-      margin-top: 29px;
-      width: 100%;
-      max-width: 642px;
-    }
-
-    .tabs {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      margin-bottom: 40px;
-      list-style: none;
-    }
-
-    .tab-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding-bottom: 7px;
-      font-family: 'Inter', Helvetica, sans-serif;
-      font-size: 16px;
-      font-weight: 400;
-      color: rgba(255,255,255,0.5);
-      text-align: left;
-      transition: color 0.2s;
-    }
-    .tab-btn:hover { color: rgba(255,255,255,0.8); }
-    .tab-btn.active {
-      border-bottom: 1px solid #fff;
-      font-size: 18px;
-      font-weight: 600;
-      color: #fff;
-      text-align: center;
-    }
-
-    .form { display: flex; flex-direction: column; gap: 20px; }
-
-    .input {
-      width: 100%;
-      height: auto;
-      border-radius: 20px;
-      border: none;
-      background: #fff;
-      padding: 16px 12px;
-      font-size: 16px;
-      color: #555c60;
-      font-family: 'Inter', Helvetica, sans-serif;
-      outline: none;
-      box-shadow: 0 0 1px rgba(0,0,0,0.25);
-      transition: box-shadow 0.2s;
-    }
-    .input::placeholder { color: #555c60; }
-    .input:focus { box-shadow: 0 0 0 2px rgba(255,255,255,0.3); }
-
-    .forgot {
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .forgot-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: 'Inter', Helvetica, sans-serif;
-      font-size: 14px;
-      color: #fff;
-      text-align: right;
-      transition: opacity 0.2s;
-    }
-    .forgot-btn:hover { opacity: 0.9; }
-
-    .submit-btn {
-      margin-top: 17px;
-      width: 100%;
-      padding: 16px 24px;
-      border-radius: 20px;
-      border: none;
-      background: linear-gradient(90deg, rgba(2,81,51,1) 95%);
-      font-family: 'Sora', Helvetica, sans-serif;
-      font-size: 16px;
-      font-weight: 400;
-      color: #fff;
-      cursor: pointer;
-      text-align: center;
-      transition: opacity 0.2s;
-    }
-    .submit-btn:hover { opacity: 0.95; }
-
-    /* Right panel (photo) */
-    .right {
-      position: relative;
-      display: none;
-      min-height: 100vh;
-    }
-    @media (min-width: 1024px) { .right { display: block; } }
-
-    .right img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sarabun:ital,wght@1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <main>
-    <section class="page" aria-label="Tela de login">
+<body class="pg-auth">
+  <main class="auth-page">
+    
+    <div class="auth-left">
+      <div class="auth-gradient"></div>
+      
+      <header class="auth-header">
+        <p class="auth-switch-text">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+        <h1 class="auth-title">Bem-vindo ao<br><span class="color-red">Jornal</span> <span class="color-green">Mandacarú</span></h1>
+      </header>
 
-      <!-- Left panel -->
-      <div class="left">
-        <div class="gradient-overlay" aria-hidden="true"></div>
-        <img class="bg-blur" src="/figmaAssets/image-91.png" alt="" aria-hidden="true" />
+      <p class="auth-tagline">
+        Mais do que notícias: uma conexão diária com a cultura,<br>
+        o povo e as histórias do Nordeste.
+      </p>
 
-        <header>
-          <p class="signup-text">
-            Não tem uma conta? <a href="cadastro.html">Cadastre-se</a>
-          </p>
-          <img
-            class="hero-img"
-            src="/figmaAssets/bem-vindo-ao-jornal-mandacar-.png"
-            alt="Bem-vindo ao Jornal Mandacarú"
-          />
-        </header>
+      <form class="auth-form" id="form-login">
+        <input class="auth-input" id="email-input" type="email" placeholder="Email" required />
+        <input class="auth-input" id="senha-input" type="password" placeholder="Senha" required />
+        
+        <div class="auth-forgot">
+          <button type="button" class="auth-forgot-btn">Esqueceu a senha?</button>
+        </div>
 
-        <p class="tagline">
-          Mais do que notícias: uma conexão diária com a cultura,<br />
-          o povo e as histórias do Nordeste.
-        </p>
+        <button type="submit" class="auth-submit-btn" id="submit-btn">Continuar</button>
+      </form>
+    </div>
 
-        <section class="form-section">
-          <nav aria-label="Método de login">
-            <ul class="tabs">
-              <li>
-                <button class="tab-btn active" type="button" onclick="setTab('email', this)">E-mail</button>
-              </li>
-              <li>
-                <button class="tab-btn" type="button" onclick="setTab('telefone', this)">Telefone</button>
-              </li>
-            </ul>
-          </nav>
+    <aside class="auth-right">
+      <img src="https://images.unsplash.com/photo-1550184658-ff6132a71714?q=80&w=1000&auto=format&fit=crop" alt="Cacto Mandacarú" />
+    </aside>
 
-          <form class="form" onsubmit="handleSubmit(event)">
-            <input
-              class="input"
-              id="email-input"
-              type="email"
-              placeholder="Email"
-              autocomplete="username"
-              required
-            />
-            <input
-              class="input"
-              id="senha-input"
-              type="password"
-              placeholder="Senha"
-              autocomplete="current-password"
-              required
-            />
-
-            <div class="forgot">
-              <button type="button" class="forgot-btn">Esqueceu a senha?</button>
-            </div>
-
-            <button type="submit" class="submit-btn" id="submit-btn">Continuar</button>
-          </form>
-        </section>
-      </div>
-
-      <!-- Right panel -->
-      <aside class="right" aria-hidden="true">
-        <img src="/figmaAssets/image-90.png" alt="" />
-      </aside>
-
-    </section>
   </main>
 
-  <script>
-    function setTab(tab, el) {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      el.classList.add('active');
-      const emailInput = document.getElementById('email-input');
-      if (tab === 'email') {
-        emailInput.type = 'email';
-        emailInput.placeholder = 'Email';
-      } else {
-        emailInput.type = 'tel';
-        emailInput.placeholder = 'Telefone';
-      }
-    }
-
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = document.getElementById('submit-btn');
-      btn.textContent = 'Entrando...';
-      btn.disabled = true;
-      const email = document.getElementById('email-input').value;
-      const senha = document.getElementById('senha-input').value;
-      fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: email, password: senha }),
-      })
-        .then(r => r.json().then(data => ({ ok: r.ok, data })))
-        .then(({ ok, data }) => {
-          if (ok) {
-            window.location.href = '/dashboard';
-          } else {
-            alert(data.message || 'Credenciais inválidas');
-            btn.textContent = 'Continuar';
-            btn.disabled = false;
-          }
-        })
-        .catch(() => {
-          alert('Erro de conexão');
-          btn.textContent = 'Continuar';
-          btn.disabled = false;
-        });
-    }
-  </script>
+  <script src="scripts.js"></script>
 </body>
 </html>
