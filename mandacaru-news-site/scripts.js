@@ -22,15 +22,15 @@
   if (!tabsContainer) return;
 
   const capitais = [
-    { nome: 'São Luís',    estado: 'MA', lat: -2.53,  lon: -44.30 },
-    { nome: 'Teresina',    estado: 'PI', lat: -5.09,  lon: -42.80 },
-    { nome: 'Fortaleza',   estado: 'CE', lat: -3.73,  lon: -38.52 },
-    { nome: 'Natal',       estado: 'RN', lat: -5.79,  lon: -35.21 },
-    { nome: 'João Pessoa', estado: 'PB', lat: -7.11,  lon: -34.86 },
-    { nome: 'Recife',      estado: 'PE', lat: -8.05,  lon: -34.88 },
-    { nome: 'Maceió',      estado: 'AL', lat: -9.66,  lon: -35.73 },
-    { nome: 'Aracaju',     estado: 'SE', lat: -10.91, lon: -37.07 },
-    { nome: 'Salvador',    estado: 'BA', lat: -12.97, lon: -38.50 },
+    { nome: 'São Luís', estado: 'MA', lat: -2.53, lon: -44.30 },
+    { nome: 'Teresina', estado: 'PI', lat: -5.09, lon: -42.80 },
+    { nome: 'Fortaleza', estado: 'CE', lat: -3.73, lon: -38.52 },
+    { nome: 'Natal', estado: 'RN', lat: -5.79, lon: -35.21 },
+    { nome: 'João Pessoa', estado: 'PB', lat: -7.11, lon: -34.86 },
+    { nome: 'Recife', estado: 'PE', lat: -8.05, lon: -34.88 },
+    { nome: 'Maceió', estado: 'AL', lat: -9.66, lon: -35.73 },
+    { nome: 'Aracaju', estado: 'SE', lat: -10.91, lon: -37.07 },
+    { nome: 'Salvador', estado: 'BA', lat: -12.97, lon: -38.50 },
   ];
 
   capitais.forEach(c => {
@@ -48,7 +48,7 @@
       `&current=temperature_2m,relative_humidity_2m,wind_speed_10m` +
       `&daily=temperature_2m_max,temperature_2m_min&timezone=auto`;
 
-    const res   = await fetch(url);
+    const res = await fetch(url);
     const dados = await res.json();
 
     document.getElementById('clima-cidade').textContent =
@@ -113,3 +113,6 @@
     });
   });
 })();
+
+
+/*Notícias */
