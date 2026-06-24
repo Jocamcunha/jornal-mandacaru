@@ -151,19 +151,83 @@
 })();
 
 /* ============================================================
-   TIRINHAS
+   TIRINHAS — Sistema de Navegação de Histórias Gráficas
    ============================================================ */
 (function initTirinhas() {
-  const btns = document.querySelectorAll('.tirinhas-sidebar__btn');
-  if (!btns.length) return;
+  const menuContainer = document.getElementById('tirinhas-menu-lista');
+  const gridContainer = document.getElementById('tirinhas-grid');
+  
+  if (!menuContainer || !gridContainer) return; // Só executa se os elementos existirem na página
 
-  btns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      btns.forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      alert(btn.textContent);
+  // Banco de dados corrigido com os nomes e extensões exatas (.jpeg) dos seus arquivos!
+  const bancoTirinhas = [
+    {
+      id: 'sabor',
+      titulo: 'Sabor do Nordeste 🍳',
+      descricao: 'As deliciosas confusões e paixões pela culinária sertaneja tradicional.',
+      paineis: ['carnedesol.jpeg']
+    },
+    {
+      id: 'dicionario',
+      titulo: 'Dicionário do Zé 📖',
+      descricao: 'Traduzindo as expressões mais arretadas do nosso vocabulário de forma cômica.',
+      paineis: ['aregiao.jpeg', 'brilho.jpeg']
+    },
+    {
+      id: 'peleja',
+      titulo: 'Peleja de Alencar ⚔️',
+      descricao: 'Os causos exagerados e assombrações que o povo conta no fim de tarde.',
+      paineis: ['ritmodonordeste.jpeg', 'mitos.jpeg']
+    }
+  ];
+
+  // Função para renderizar os quadrinhos na tela
+  function exibirSerie(serie) {
+    document.getElementById('tirinhas-titulo-atual').textContent = serie.titulo;
+    document.getElementById('tirinhas-descricao-atual').textContent = serie.descricao;
+
+    gridContainer.innerHTML = ''; // Limpa os painéis anteriores
+    
+    serie.paineis.forEach(nomeArquivo => {
+      const painelBox = document.createElement('div');
+      painelBox.className = 'tirinhas-panel';
+      
+      const img = document.createElement('img');
+      img.src = nomeArquivo; // Caminho correto do arquivo na mesma pasta
+      img.alt = `Painel da tirinha ${serie.titulo}`;
+      
+      // Mensagem de aviso elegante caso o arquivo não mude de pasta ou suma
+      img.onerror = () => {
+        painelBox.innerHTML = `<span style="color: #ff6b6b; font-size: 13px; padding: 30px 10px;">[Erro ao carregar: ${nomeArquivo}]</span>`;
+      };
+
+      painelBox.appendChild(img);
+      gridContainer.appendChild(painelBox); // Corrigido! Antes estava como 'box' e quebrava
     });
+  }
+
+  // Limpa o menu lateral para não duplicar botões
+  menuContainer.innerHTML = '';
+
+  // Criação dinâmica dos botões da barra lateral
+  bancoTirinhas.forEach((serie, index) => {
+    const botao = document.createElement('button');
+    botao.className = 'tirinhas-sidebar__btn';
+    botao.textContent = serie.titulo;
+
+    if (index === 0) botao.classList.add('selected');
+
+    botao.addEventListener('click', () => {
+      document.querySelectorAll('.tirinhas-sidebar__btn').forEach(b => b.classList.remove('selected'));
+      botao.classList.add('selected');
+      exibirSerie(serie);
+    });
+
+    menuContainer.appendChild(botao);
   });
+
+  // Inicializa exibindo a primeira tirinha por padrão
+  exibirSerie(bancoTirinhas[0]);
 })();
 
 /* ============================================================

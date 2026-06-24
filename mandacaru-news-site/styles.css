@@ -806,3 +806,261 @@ body.pg-clima {
 .forecast-min {
   color: #4dadf7;
 }
+
+/*Notícias */
+
+/* ---------- Fundo da página ---------- */
+body.pg-detalhe {
+  background: var(--bg);
+}
+
+/* ---------- Área central da página ---------- */
+.detalhe-container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* ---------- Caixa branca que envolve tudo ---------- */
+.detalhe-caixa {
+  background: var(--branco);
+  border-radius: 12px;
+  padding: 40px;
+}
+
+/* ---------- Título da notícia ---------- */
+.detalhe-titulo {
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--texto);
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+
+/* ---------- Foto principal ---------- */
+.detalhe-foto {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 30px;
+}
+
+/* ---------- Texto em duas colunas ---------- */
+.detalhe-colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  margin-bottom: 25px;
+}
+
+.detalhe-paragrafo {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.75;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+/* ---------- Rodapé da notícia (bandeiras + curtidas) ---------- */
+.detalhe-rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Três quadradinhos coloridos */
+.detalhe-bandeiras {
+  display: flex;
+  gap: 4px;
+}
+
+.bandeira {
+  width: 20px;
+  height: 13px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.bandeira-verde   { background: #388e3c; }
+.bandeira-amarela { background: #fdd835; }
+.bandeira-vermelha{ background: #e53935; }
+
+/* Botões de salvar e curtir */
+.detalhe-acoes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-salvar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  font-size: 20px;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.btn-salvar:hover {
+  color: var(--verde);
+}
+
+.btn-curtir {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #e53935;
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.btn-curtir:hover {
+  background: #fdecea;
+}
+
+/* ============================================================
+   PÁGINA DE TIRINHAS (COMIC STRIPS DASHBOARD) - ATUALIZADO
+   ============================================================ */
+body.pg-tirinhas {
+  background: #060d08;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.tirinhas-layout {
+  max-width: 1350px; /* Aumentamos a largura máxima do container global */
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 992px) {
+  .tirinhas-layout {
+    grid-template-columns: 3.5fr 1fr; /* Dá muito mais destaque e espaço para a área da tirinha */
+  }
+}
+
+/* Área de Leitura */
+.tirinhas-area {
+  background: linear-gradient(135deg, #0e1c12 0%, #060e09 100%);
+  border: 1px solid #1f3c27;
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  height: fit-content; /* Garante que o container cresça junto com a tirinha */
+}
+
+.tirinhas-view-header {
+  border-bottom: 1px solid #1f3c27;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.tirinhas-view-header h1 {
+  font-family: 'Sarabun', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #2eb85c;
+  margin-bottom: 6px;
+}
+
+.tirinhas-view-header p {
+  color: #a0aab0;
+  font-size: 15px;
+}
+
+/* Feed das Tirinhas (Alinhamento Vertical Completo) */
+.tirinhas-grid {
+  display: flex;
+  flex-direction: column; /* Organiza as tirinhas uma abaixo da outra, sem esmagar */
+  gap: 25px;
+  width: 100%;
+}
+
+.tirinhas-panel {
+  background: #040a05;
+  border: 2px solid #162b1c;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  transition: transform 0.2s, border-color 0.2s;
+  width: 100%;
+  height: auto; /* REMOVE qualquer altura fixa antiga que cortava a imagem */
+  display: block;
+}
+
+.tirinhas-panel:hover {
+  transform: translateY(-2px);
+  border-color: #2eb85c;
+}
+
+/* Ajuste Cirúrgico da Imagem */
+.tirinhas-panel img {
+  width: 100%;
+  height: auto; /* Deixa a altura se ajustar proporcionalmente ao tamanho real da imagem */
+  display: block;
+  object-fit: contain; /* Mantém a proporção original sem cortes indesejados */
+}
+
+/* Sidebar e Botões */
+.tirinhas-sidebar {
+  background: #0a170e;
+  border: 1px solid #162b1c;
+  border-radius: 20px;
+  padding: 25px;
+  height: fit-content;
+  position: sticky; /* O menu lateral acompanha a rolagem se a tirinha for muito longa */
+  top: 20px;
+}
+
+.tirinhas-sidebar h3 {
+  font-size: 18px;
+  color: #c5dec7;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #162b1c;
+  padding-bottom: 10px;
+}
+
+.tirinhas-menu-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tirinhas-sidebar__btn {
+  background: #142419;
+  color: #c5dec7;
+  border: 1px solid #1f3827;
+  padding: 14px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.tirinhas-sidebar__btn:hover {
+  background: #1d3625;
+  color: #fff;
+}
+
+.tirinhas-sidebar__btn.selected {
+  background: #2eb85c;
+  color: #000;
+  border-color: #2eb85c;
+  box-shadow: 0 4px 12px rgba(46, 184, 92, 0.3);
+}
