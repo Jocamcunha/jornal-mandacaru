@@ -404,14 +404,55 @@
 /* ============================================================
    PERFIL
    ============================================================ */
-(function initPerfil() {
-  const saveBtn = document.getElementById('perfil-saveBtn');
-  if (!saveBtn) return;
+  const saveBtn = document.getElementById("perfil-saveBtn");
 
-  saveBtn.addEventListener('click', () => {
-    alert('Alterações salvas!');
+  if (saveBtn) {
+    saveBtn.addEventListener("click", () => {
+
+      const dados = {
+        nome: document.querySelector('input[value="Daniele Silva"]')?.value,
+        usuario: document.querySelector('input[value="DaniSilva"]')?.value,
+        email: document.querySelector('input[value="daniele@gmail.com"]')?.value
+      };
+
+      localStorage.setItem("perfilMandacaru", JSON.stringify(dados));
+
+      alert("Alterações salvas com sucesso!");
+    });
+  }
+
+  /* ==========================
+     HOME - VER MAIS
+     ========================== */
+
+  const btnVerMais = document.getElementById("home-vermais");
+
+  if (btnVerMais) {
+    btnVerMais.addEventListener("click", () => {
+      alert("Carregando mais notícias...");
+    });
+  }
+
+  /* ==========================
+     MENU ATIVO AUTOMÁTICO
+     ========================== */
+
+  const paginaAtual = window.location.pathname
+    .split("/")
+    .pop()
+    .toLowerCase();
+
+  const links = document.querySelectorAll(".header__nav a");
+
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
   });
-})();
 
 /* ============================================================
    TIRINHAS — Sistema de Navegação de Histórias Gráficas
@@ -434,13 +475,13 @@
       id: 'dicionario',
       titulo: 'Dicionário do Zé 📖',
       descricao: 'Traduzindo as expressões mais arretadas do nosso vocabulário de forma cômica.',
-      paineis: ['aregiao.jpeg', 'brilho.jpeg']
+      paineis: ['aregiao.jpeg', 'ritmodonordeste.jpeg']
     },
     {
       id: 'peleja',
       titulo: 'Peleja de Alencar ⚔️',
       descricao: 'Os causos exagerados e assombrações que o povo conta no fim de tarde.',
-      paineis: ['ritmodonordeste.jpeg', 'mitos.jpeg']
+      paineis: ['brilho.jpeg', 'mitos.jpeg']
     }
   ];
 

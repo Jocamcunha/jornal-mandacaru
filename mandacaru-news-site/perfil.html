@@ -9,84 +9,137 @@
 <body class="pg-perfil">
 
   <header class="header">
-    <div class="header__logo">🌵 Mandacarú News</div>
-    <nav class="header__nav">
+    <div class="header__left">
+      <div class="header__logo">🌵 Mandacarú News</div>
+    </div>
+
+    <nav class="header__nav header__nav--main">
       <a href="home.html">Notícias</a>
       <a href="clima.html">Clima</a>
-      <a href="cultura.html">Cultura</a>
+      <a href="culinaria.html">Cultura</a>
       <a href="tirinhas.html">Tirinhas</a>
     </nav>
+
+    <div class="header__actions">
+      <a class="header__icon-link active" href="perfil.html" aria-label="Abrir perfil">
+        <span class="header__icon">👤</span>
+      </a>
+
+      <div class="header__searchbox" aria-label="Busca">
+        <button class="header__menu-btn" type="button" aria-label="Abrir menu">☰</button>
+        <input class="header__search" type="text" placeholder="Pesquisar...">
+        <button class="header__search-btn" type="button" aria-label="Pesquisar">⌕</button>
+      </div>
+
+      <div class="header__currency" aria-label="Cotação do dólar">
+        <span class="header__currency-flag">🇺🇸</span>
+        <span class="header__currency-text">USD/BRL</span>
+        <small>15,15</small>
+      </div>
+    </div>
   </header>
 
-  <div class="perfil-container">
-
-    <aside class="perfil-sidebar">
-      <div class="perfil-sidebar__user">
-        <img src="https://i.pravatar.cc/80" alt="avatar">
-        <div>
-          <h3>Daniele Silva</h3>
-          <p>daniele@gmail.com</p>
-        </div>
-      </div>
-
-      <ul class="perfil-sidebar__nav">
-        <li class="active">👤 Nome de Usuário</li>
-        <li>🔖 Salvos</li>
-        <li>⚙️ Configurações</li>
-        <li>🔔 Notificações</li>
-      </ul>
-    </aside>
-
-    <main class="perfil-content">
-      <div class="perfil-header">
-        <img src="https://i.pravatar.cc/100" alt="avatar">
-        <div>
-          <h1>Daniele Silva</h1>
-          <p>daniele@gmail.com</p>
-        </div>
-      </div>
-
-      <div class="perfil-form">
-        <div>
-          <label>Nome Completo</label>
-          <input value="Daniele Silva">
+  <main class="perfil-page">
+    <section class="perfil-shell">
+      <aside class="perfil-sidebar">
+        <div class="perfil-sidebar__user">
+          <img src="https://i.pravatar.cc/100?img=47" alt="avatar de Daniele">
+          <div>
+            <h3>Daniele Silva</h3>
+            <p>daniele@gmail.com</p>
+          </div>
         </div>
 
-        <div>
-          <label>Nome exibido</label>
-          <input value="DaniSilva">
+        <nav class="perfil-sidebar__nav" aria-label="Menu do perfil">
+          <button type="button" class="perfil-sidebar__item active" data-perfil-tab="usuario">
+            <span class="perfil-sidebar__item-icon">👤</span>
+            <span>Nome de Usuário</span>
+            <span class="perfil-sidebar__item-arrow">›</span>
+          </button>
+          <button type="button" class="perfil-sidebar__item" data-perfil-tab="salvos">
+            <span class="perfil-sidebar__item-icon">🔖</span>
+            <span>Salvos</span>
+            <span class="perfil-sidebar__item-arrow">›</span>
+          </button>
+          <button type="button" class="perfil-sidebar__item" data-perfil-tab="configuracoes">
+            <span class="perfil-sidebar__item-icon">⚙️</span>
+            <span>Configurações</span>
+            <span class="perfil-sidebar__item-arrow">›</span>
+          </button>
+          <button type="button" class="perfil-sidebar__item" data-perfil-tab="notificacoes">
+            <span class="perfil-sidebar__item-icon">🔔</span>
+            <span>Notificações</span>
+            <span class="perfil-sidebar__item-arrow">›</span>
+          </button>
+        </nav>
+      </aside>
+
+      <section class="perfil-content">
+        <div class="perfil-header">
+          <div class="perfil-header__avatar-wrap">
+            <img src="https://i.pravatar.cc/120?img=47" alt="avatar de Daniele">
+            <button class="perfil-avatar-edit" type="button" aria-label="Editar foto">✎</button>
+          </div>
+          <div>
+            <h1>Daniele Silva</h1>
+            <p>daniele@gmail.com</p>
+          </div>
         </div>
 
-        <div>
-          <label>Gênero</label>
-          <select><option>Feminino</option></select>
-        </div>
+        <form class="perfil-form">
+          <div class="perfil-field">
+            <label for="perfil-nome-completo">Nome Completo</label>
+            <input id="perfil-nome-completo" type="text" value="Daniele Silva">
+          </div>
 
-        <div>
-          <label>País</label>
-          <select><option>Brasil</option></select>
-        </div>
+          <div class="perfil-field">
+            <label for="perfil-nome-exibido">Nome exibido</label>
+            <input id="perfil-nome-exibido" type="text" value="DaniSilva">
+          </div>
 
-        <div class="full">
-          <label>Email</label>
-          <input value="daniele@gmail.com">
-        </div>
+          <div class="perfil-field">
+            <label for="perfil-genero">Gênero</label>
+            <select id="perfil-genero">
+              <option>Feminino</option>
+              <option>Masculino</option>
+              <option>Prefiro não informar</option>
+              <option>Outro</option>
+            </select>
+          </div>
 
-        <div>
-          <label>Celular</label>
-          <input value="(81) 98888-7766">
-        </div>
+          <div class="perfil-field">
+            <label for="perfil-pais">País</label>
+            <select id="perfil-pais">
+              <option>Brasil</option>
+              <option>Argentina</option>
+              <option>Chile</option>
+              <option>Colômbia</option>
+              <option>Portugal</option>
+            </select>
+          </div>
 
-        <div>
-          <label>Cidade</label>
-          <input value="Recife, PE">
-        </div>
-      </div>
+          <div class="perfil-field perfil-field--full">
+            <label for="perfil-email">Email Cadastrado</label>
+            <input id="perfil-email" type="email" value="daniele@gmail.com">
+          </div>
 
-      <button id="perfil-saveBtn" class="perfil-save-btn">Salvar Alterações</button>
-    </main>
+          <div class="perfil-field">
+            <label for="perfil-celular">Número de Celular</label>
+            <input id="perfil-celular" type="tel" value="(81) 98888-7766">
+          </div>
 
-  </div>
+          <div class="perfil-field">
+            <label for="perfil-cidade">Localização / Cidade</label>
+            <input id="perfil-cidade" type="text" value="Recife, PE">
+          </div>
+
+          <div class="perfil-form__actions">
+            <button id="perfil-saveBtn" class="perfil-save-btn" type="button">Salvar Alterações</button>
+          </div>
+        </form>
+      </section>
+    </section>
+  </main>
 
   <script src="scripts.js"></script>
 </body>
